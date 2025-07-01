@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('login.index', function ($view) {
             $view->with('settings', Settings::first());
         });
+        view()->composer('login.register', function ($view) {
+            $view->with('settings', Settings::first());
+        });
     }
 
     /**

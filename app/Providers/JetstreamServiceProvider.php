@@ -34,6 +34,10 @@ class JetstreamServiceProvider extends ServiceProvider
             return view('login.index');
         });
 
+        Fortify::registerView(function () {
+            return view('login.register');
+        });
+
         Fortify::authenticateUsing(function (Request $request) {
             $user = User::where('email', $request->email)->first();
 
